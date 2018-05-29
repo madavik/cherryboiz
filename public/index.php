@@ -1,1 +1,0 @@
-/Users/jogibson/ChgSites/cherryboiz/index.php
