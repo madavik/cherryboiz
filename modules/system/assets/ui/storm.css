@@ -2186,6 +2186,7 @@ textarea.input-group-sm > .form-control,textarea.input-group-sm > .input-group-a
 .input-group-btn:last-child > .btn,.input-group-btn:last-child > .btn-group{margin-left:-1px}
 .loading-indicator{padding:20px 20px 20px 60px;color:#999999;font-size:14px;font-weight:500;text-align:left;z-index:10}
 .loading-indicator > span{background:transparent url('images/loader.gif') no-repeat 0 50%;position:absolute;width:40px;height:40px;top:50%;margin-top:-20px;left:0;display:block}
+.form-buttons .loading-indicator{background:#f9f9f9}
 .loading-indicator-container{position:relative;min-height:40px}
 .loading-indicator-container .loading-indicator{position:absolute;left:0;top:0;width:100%;height:100%;padding-top:0}
 .loading-indicator-container .loading-indicator > div{position:absolute;top:50%;margin-top:-0.65em}
@@ -2455,6 +2456,10 @@ html.cssanimations .cursor-loading-indicator.hide{display:none}
 .custom-checkbox p.help-block,.custom-radio p.help-block{padding-left:6px;margin-bottom:17px}
 .custom-radio label:before{-webkit-border-radius:18px;-moz-border-radius:18px;border-radius:18px}
 .custom-checkbox label:before{-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
+.inline-options .field-checkboxlist:not(.is-scrollable){padding:10px 20px 20px 20px !important}
+.inline-options .field-checkboxlist:not(.is-scrollable) .custom-checkbox{display:inline-block;margin:0}
+.inline-options .field-checkboxlist:not(.is-scrollable) .custom-checkbox label{margin-bottom:0 !important;padding-top:10px}
+.inline-options .field-checkboxlist:not(.is-scrollable) .custom-checkbox label:before{top:10px}
 .switch-field .field-switch{padding-left:85px;float:left}
 .switch-field .field-switch > label{margin-top:3px}
 .custom-switch{display:block;width:65px;height:26px;position:relative;text-transform:uppercase;border:none;cursor:pointer;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}

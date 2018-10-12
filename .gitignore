@@ -1,5 +1,6 @@
 /bootstrap/compiled.php
 /vendor
+/node_modules
 composer.phar
 .DS_Store
 .idea
@@ -15,6 +16,9 @@ php-errors.log
 sftp-config.json
 selenium.php
 composer.lock
+
+/themes/cherry/mix-manifest.json
+/themes/cherry/assets/dist
 
 # for netbeans
 nbproject
