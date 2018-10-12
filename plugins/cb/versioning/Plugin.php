@@ -44,7 +44,7 @@ class Plugin extends PluginBase
     {
         Event::listen('cms.page.beforeRenderPage', function($controller, $page) {
 			$mix = new MixExtension(
-				'themes/cherry/assets',     // the absolute public directory
+				'themes/cherry/',     // the absolute public directory
 				'mix-manifest.json'   // the manifest filename (default value is 'mix-manifest.json')
 			);
 			$twig = $controller->getTwig();

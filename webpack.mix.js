@@ -19,6 +19,10 @@ mix.js('./themes/cherry/assets/js/app.js', 'assets/dist/js')
     })
     .version();
 
+mix.combine([
+    'node_modules/jquery/dist/jquery.min.js',
+], 'themes/cherry/assets/dist/js/site-build.js').version();
+
 // Full API
 // mix.js(src, output);
 // mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.

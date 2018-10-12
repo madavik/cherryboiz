@@ -26,5 +26,8 @@
   "homepage": "https://github.com/madavik/cherryboiz#readme",
   "devDependencies": {
     "laravel-mix": "^2.1.14"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
   }
 }

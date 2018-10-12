@@ -1,7 +1,15 @@
 .hp-hero {
-    height: 397px;
+    height: 400px;
+    max-width: 1200px;
+    margin: 0 auto;
     position: relative;
     background-image: url('/themes/cherry/assets/img/summerbod.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    @media only screen and (max-width: 800px) {
+		height: 285px;
+    }
+    @media only screen and (max-width: 500px) {
+		height: 200px;
+	}
 }
