@@ -1,0 +1,12 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: 'Title'
+    signature:
+        label: 'Signature'
+    body:
+        label: 'Body'
+        type: textarea

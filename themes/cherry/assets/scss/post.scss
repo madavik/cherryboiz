@@ -1,0 +1,19 @@
+.sig {
+    position: relative;
+}
+.sig-line {
+    background-color: red;
+    left: 0;
+    right: 0;
+    height: 14px;
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+}
+.sig h4{
+    position: relative;
+    z-index: 2;
+    text-align: right;
+    color: white;
+    font-size: 15px
+}

@@ -1,0 +1,15 @@
+{% set posts = __SELF__.getPosts %}
+    {% for post in posts %} 
+    <div class="post-card shadow bg-white py-5 px-5 mt-5">
+        <div class="title">
+            <h2 class="times">{{post.title}}</h2>
+        </div>
+        <div class="chunk typewriter">
+            {{post.body|raw}}
+        </div>
+        <div class="sig">
+            <h4 class="typewriter">{{post.signature}}</h4>
+            <div class="sig-line"></div>
+        </div>
+    </div>
+    {% endfor %}

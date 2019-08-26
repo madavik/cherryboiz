@@ -3,16 +3,20 @@ description = "Default layout"
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="{{'/assets/css/bootstrap.min.css'|theme}}" type="text/css" media="all">
+        <meta charset="utf-8">
+        <title>Cherry Boiz</title>
+        <meta id="mdesc" name="description" content="Cherry Boiz | a place where you can relax and get educated">
+        <meta name="author" content="CherryBoiz">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <link rel="stylesheet" href="{{Mix('/assets/dist/css/combine.css')|theme}}" type="text/css" media="all">
         <link rel="stylesheet" href="{{Mix('/assets/dist/css/app.css')|theme}}" type="text/css" media="all">
     </head>
-    <body>
+    <body class="bg-grey">
        
-
+        {% partial "header" %}
         <!-- Content -->
         {% page %}
         <script src="{{Mix('/assets/dist/js/site-build.js')|theme}}"></script>
-        <script src="{{'assets/js/bootstrap.min.js'|theme}}"></script>
         <style>
         </style>
     </body>

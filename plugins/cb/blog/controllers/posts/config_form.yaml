@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Post
+
+# Model Form Field configuration
+form: $/cb/blog/models/post/fields.yaml
+
+# Model Class name
+modelClass: Cb\Blog\Models\Post
+
+# Default redirect location
+defaultRedirect: cb/blog/posts
+
+# Create page
+create:
+    title: Create Post
+    redirect: cb/blog/posts/update/:id
+    redirectClose: cb/blog/posts
+
+# Update page
+update:
+    title: Edit Post
+    redirect: cb/blog/posts
+    redirectClose: cb/blog/posts
+
+# Preview page
+preview:
+    title: Preview Post

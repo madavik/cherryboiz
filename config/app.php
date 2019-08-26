@@ -128,6 +128,7 @@ return [
         // 'Illuminate\Html\HtmlServiceProvider', // Example
 
         'System\ServiceProvider',
+        'Vessel\VesselServiceProvider',
     ]),
 
     /*

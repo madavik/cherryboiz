@@ -1,15 +1,11 @@
 .hp-hero {
-    height: 400px;
-    max-width: 1200px;
-    margin: 0 auto;
+    height: 100vh;
+    width: 100%;
     position: relative;
-    background-image: url('/themes/cherry/assets/img/summerbod.jpg');
+    background-image: url('/themes/cherry/assets/img/fur.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     @media only screen and (max-width: 800px) {
-		height: 285px;
+      background-position: center right; 
     }
-    @media only screen and (max-width: 500px) {
-		height: 200px;
-	}
 }

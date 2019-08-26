@@ -28,6 +28,7 @@
     "laravel-mix": "^2.1.14"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "jquery": "^3.3.1"
   }
 }

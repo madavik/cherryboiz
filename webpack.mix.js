@@ -18,9 +18,13 @@ mix.js('./themes/cherry/assets/js/app.js', 'assets/dist/js')
         processCssUrls: false
     })
     .version();
+mix.combine([
+    'node_modules/bootstrap/dist/css/bootstrap.min.css',
+], 'themes/cherry/assets/dist/css/combine.css').version();
 
 mix.combine([
     'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
 ], 'themes/cherry/assets/dist/js/site-build.js').version();
 
 // Full API
