@@ -1,15 +1,21 @@
 {% set posts = __SELF__.getPosts %}
-    {% for post in posts %} 
-    <div class="post-card shadow bg-white py-5 px-5 mt-5">
-        <div class="title">
-            <h2 class="times">{{post.title}}</h2>
-        </div>
-        <div class="chunk typewriter">
-            {{post.body|raw}}
-        </div>
-        <div class="sig">
-            <h4 class="typewriter">{{post.signature}}</h4>
-            <div class="sig-line"></div>
-        </div>
+{% for post in posts %} 
+<div class="post-card shadow bg-white py-5 px-5 mt-5">
+    {% if post.image %}
+    <img src="{{post.image}}" alt="post image" height="auto" width="100%">
+    {% endif %}
+    <div class="title mb-3">
+        <h2 class="times">{{post.title}}</h2>
     </div>
-    {% endfor %}
+    <div class="chunk typewriter mb-4">
+        <h4 class="typewriter">{{post.created_at|date("F jS \\a\\t g:ia", "MST")}}</h4>
+    </div>
+    <div class="chunk typewriter mb-4">
+        {{post.body|raw}}
+    </div>
+    <div class="sig">
+        <h4 class="typewriter">{{post.signature}}</h4>
+        <div class="sig-line"></div>
+    </div>
+</div>
+{% endfor %}

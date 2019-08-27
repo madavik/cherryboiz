@@ -41,6 +41,7 @@ return [
         'fi' => 'Suomi',
         'sv' => 'Svenska',
         'sk' => 'Slovenský',
+        'th' => 'ไทย',
         'tr' => 'Türkçe',
         'uk' => 'Українська мова',
         'zh-cn' => '简体中文',
@@ -111,6 +112,7 @@ return [
         'plugin_label'  => 'Plugin',
         'unknown_plugin' => 'Plugin has been removed from the file system.',
         'select_label' => 'Select Action...',
+        'bulk_actions_label' => 'Bulk actions',
         'check_yes' => 'Yes',
         'check_no' => 'No',
         'unfrozen' => 'Updates Enabled',
@@ -316,11 +318,14 @@ return [
         'plugin_author' => 'Author',
         'plugin_not_found' => 'Plugin not found',
         'core_current_build' => 'Current build',
+        'core_view_changelog' => 'View Changelog',
         'core_build' => 'Build :build',
         'core_build_help' => 'Latest build is available.',
         'core_downloading' => 'Downloading application files',
         'core_extracting' => 'Unpacking application files',
         'core_set_build' => 'Setting build number',
+        'changelog' => 'Changelog',
+        'changelog_view_details' => 'View details',
         'plugins' => 'Plugins',
         'themes' => 'Themes',
         'disabled' => 'Disabled',
@@ -425,9 +430,11 @@ return [
         'manage_mail_templates' => 'Manage mail templates',
         'manage_mail_settings' => 'Manage mail settings',
         'manage_other_administrators' => 'Manage other administrators',
+        'impersonate_users' => 'Impersonate users',
         'manage_preferences' => 'Manage backend preferences',
         'manage_editor' => 'Manage code editor preferences',
         'view_the_dashboard' => 'View the dashboard',
+        'manage_default_dashboard' => 'Manage the default dashboard',
         'manage_branding' => 'Customize the back-end'
     ],
     'log' => [
@@ -444,5 +451,21 @@ return [
     'media' => [
         'invalid_path' => "Invalid file path specified: ':path'.",
         'folder_size_items' => 'item(s)',
+    ],
+    'page' => [
+        'custom_error' => [
+            'label' => 'Page error',
+            'help' => "We're sorry, but something went wrong and the page cannot be displayed."
+        ],
+        'maintenance' => [
+            'label' => "We'll be right back!",
+            'help' => "We're currently down for maintenance, check back soon!",
+            'message' => "Message:",
+            'available_at' => "Try again after:",
+        ],
+    ],
+    'pagination' => [
+        'previous' => 'Previous',
+        'next' => 'Next',
     ],
 ];

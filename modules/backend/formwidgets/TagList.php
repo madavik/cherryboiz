@@ -47,6 +47,11 @@ class TagList extends FormWidgetBase
      */
     public $useKey = false;
 
+    /**
+     * @var string Placeholder for empty TagList widget
+     */
+    public $placeholder = '';
+
     //
     // Object properties
     //
@@ -68,6 +73,7 @@ class TagList extends FormWidgetBase
             'mode',
             'nameFrom',
             'useKey',
+            'placeholder'
         ]);
     }
 
@@ -86,6 +92,7 @@ class TagList extends FormWidgetBase
      */
     public function prepareVars()
     {
+        $this->vars['placeholder'] = $this->placeholder;
         $this->vars['useKey'] = $this->useKey;
         $this->vars['field'] = $this->formField;
         $this->vars['fieldOptions'] = $this->getFieldOptions();
@@ -191,9 +198,10 @@ class TagList extends FormWidgetBase
     protected function getSeparatorCharacter()
     {
         switch (strtolower($this->separator)) {
-            case 'comma': return ',';
-            case 'space': return ' ';
+            case 'comma':
+                return ',';
+            case 'space':
+                return ' ';
         }
     }
-
 }

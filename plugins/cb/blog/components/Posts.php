@@ -20,6 +20,17 @@ class Posts extends ComponentBase
 
     public function getPosts()
     {
-        return Post::all()->toArray();
+        $ps = [];
+        $posts =Post::orderBy('created_at', 'desc')->get();
+        foreach ($posts as $post) {
+            $image = null;
+            if($post->image){
+                $image = $post->image->getPath();
+            }
+            $p = $post->toArray();
+            $p['image'] = $image;
+            array_push($ps, $p);
+        }
+        return $ps;
     }
 }

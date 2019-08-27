@@ -5,6 +5,7 @@ use App;
 use Str;
 use File;
 use Lang;
+use Log;
 use View;
 use Config;
 use Schema;
@@ -121,17 +122,28 @@ class PluginManager
         $className = $namespace.'\Plugin';
         $classPath = $path.'/Plugin.php';
 
-        // Autoloader failed?
-        if (!class_exists($className)) {
-            include_once $classPath;
-        }
+        try {
+            // Autoloader failed?
+            if (!class_exists($className)) {
+                include_once $classPath;
+            }
 
-        // Not a valid plugin!
-        if (!class_exists($className)) {
+            // Not a valid plugin!
+            if (!class_exists($className)) {
+                return;
+            }
+
+            $classObj = new $className($this->app);
+        } catch (\Throwable $e) {
+            Log::error('Plugin ' . $className . ' could not be instantiated.', [
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString()
+            ]);
             return;
         }
 
-        $classObj = new $className($this->app);
         $classId = $this->getIdentifier($classObj);
 
         /*
@@ -351,7 +363,9 @@ class PluginManager
     {
         $classId = $this->getIdentifier($namespace);
 
-        return isset($this->plugins[$classId]);
+        $normalized = $this->normalizeIdentifier($classId);
+
+        return isset($this->plugins[$normalized]);
     }
 
     /**
@@ -695,13 +709,11 @@ class PluginManager
 
         $loopCount = 0;
         while (count($checklist)) {
-
             if (++$loopCount > 999) {
                 throw new ApplicationException('Too much recursion');
             }
 
             foreach ($checklist as $code => $plugin) {
-
                 /*
                  * Get dependencies and remove any aliens
                  */
@@ -733,9 +745,7 @@ class PluginManager
                 array_push($result, $code);
                 unset($checklist[$code]);
             }
-
         }
-
         return $result;
     }
 
