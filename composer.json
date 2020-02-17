@@ -1,13 +1,9 @@
 {
     "name": "october/october",
-    "description": "October CMS",
+    "description": "OctoberCMS",
     "homepage": "https://octobercms.com",
-    "keywords": [
-        "october",
-        "cms",
-        "octobercms",
-        "laravel"
-    ],
+    "type": "project",
+    "keywords": ["october", "cms", "octobercms", "laravel"],
     "license": "MIT",
     "authors": [
         {
@@ -35,24 +31,26 @@
         "source": "https://github.com/octobercms/october"
     },
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.0.8",
         "ext-mbstring": "*",
         "ext-openssl": "*",
         "october/rain": "~1.0",
         "october/system": "~1.0",
         "october/backend": "~1.0",
         "october/cms": "~1.0",
-        "laravel/framework": "^5.8.0",
+        "laravel/framework": "^5.5.40",
         "wikimedia/composer-merge-plugin": "dev-master",
         "stormiix/laravel-mix-twig-extension": "dev-master",
-        "shipping-docker/vessel": "^4.0",
+        "shipping-docker/vessel": "^5.0",
         "predis/predis": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.7",
-        "phpunit/phpunit": "~5.7",
+        "phpunit/phpunit": "~6.5",
         "phpunit/phpunit-selenium": "~1.2",
-        "composer/composer": "^1.9"
+        "meyfa/phpunit-assert-gd": "1.1.0",
+        "squizlabs/php_codesniffer": "3.*",
+        "jakub-onderka/php-parallel-lint": "^1.0"
     },
     "autoload-dev": {
         "classmap": [
@@ -63,14 +61,19 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "php artisan key:generate"
+            "php artisan key:generate",
+            "php artisan package:discover"
         ],
         "post-update-cmd": [
-            "php artisan october:util set build"
+            "php artisan october:util set build",
+            "php artisan package:discover"
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "platform": {
+            "php": "7.0.8"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
