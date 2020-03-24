@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Vibe
+
+# Model Form Field configuration
+form: $/cb/linez/models/vibe/fields.yaml
+
+# Model Class name
+modelClass: Cb\Linez\Models\Vibe
+
+# Default redirect location
+defaultRedirect: cb/linez/vibes
+
+# Create page
+create:
+    title: Create Vibe
+    redirect: cb/linez/vibes/update/:id
+    redirectClose: cb/linez/vibes
+
+# Update page
+update:
+    title: Edit Vibe
+    redirect: cb/linez/vibes
+    redirectClose: cb/linez/vibes
+
+# Preview page
+preview:
+    title: Preview Vibe

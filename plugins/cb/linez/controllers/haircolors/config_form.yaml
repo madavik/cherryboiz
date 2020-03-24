@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Hair Color
+
+# Model Form Field configuration
+form: $/cb/linez/models/haircolor/fields.yaml
+
+# Model Class name
+modelClass: Cb\Linez\Models\HairColor
+
+# Default redirect location
+defaultRedirect: cb/linez/haircolors
+
+# Create page
+create:
+    title: Create Hair Color
+    redirect: cb/linez/haircolors/update/:id
+    redirectClose: cb/linez/haircolors
+
+# Update page
+update:
+    title: Edit Hair Color
+    redirect: cb/linez/haircolors
+    redirectClose: cb/linez/haircolors
+
+# Preview page
+preview:
+    title: Preview Hair Color

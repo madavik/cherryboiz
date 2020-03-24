@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Location
+
+# Model Form Field configuration
+form: $/cb/linez/models/location/fields.yaml
+
+# Model Class name
+modelClass: Cb\Linez\Models\Location
+
+# Default redirect location
+defaultRedirect: cb/linez/locations
+
+# Create page
+create:
+    title: Create Location
+    redirect: cb/linez/locations/update/:id
+    redirectClose: cb/linez/locations
+
+# Update page
+update:
+    title: Edit Location
+    redirect: cb/linez/locations
+    redirectClose: cb/linez/locations
+
+# Preview page
+preview:
+    title: Preview Location

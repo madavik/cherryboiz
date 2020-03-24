@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Line
+
+# Model Form Field configuration
+form: $/cb/linez/models/line/fields.yaml
+
+# Model Class name
+modelClass: Cb\Linez\Models\Line
+
+# Default redirect location
+defaultRedirect: cb/linez/lines
+
+# Create page
+create:
+    title: Create Line
+    redirect: cb/linez/lines/update/:id
+    redirectClose: cb/linez/lines
+
+# Update page
+update:
+    title: Edit Line
+    redirect: cb/linez/lines
+    redirectClose: cb/linez/lines
+
+# Preview page
+preview:
+    title: Preview Line

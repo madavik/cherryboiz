@@ -1,0 +1,12 @@
+1.0.1: First version of Linez
+1.0.2:
+  - create Linez tables
+  - create_hair_colors_table.php
+  - create_lines_table.php
+  - create_locations_table.php
+  - create_vibes_table.php
+1.0.3:
+  - create pivot tables
+  - create_line_location_table.php
+  - create_hair_color_line_table.php
+  - create_line_vibe_table.php

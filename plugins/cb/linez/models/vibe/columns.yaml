@@ -1,0 +1,8 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    vibe:
+        label: Vibe
+        searchable: true

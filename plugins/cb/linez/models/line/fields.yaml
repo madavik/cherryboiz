@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    line:
+        label: Line
+    haircolors:
+        label: Hair Colors
+        type: relation
+        select: color
+    locations:
+        label: Loacations
+        type: relation
+        select: location
+    vibes:
+        label: Vibes
+        type: relation
+        select: vibe
