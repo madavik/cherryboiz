@@ -1,6 +1,7 @@
 <?php namespace Cb\Linez\Controllers;
 
 use BackendMenu;
+use Response;
 use Backend\Classes\Controller;
 use Cb\Linez\Models\Location;
 
@@ -25,6 +26,10 @@ class Locations extends Controller
     }
     public function getLocations()
     {
-        return Location::all('location')->toJson();
+        return Response::json(array(
+            'status'    => 'Success',
+            'code'      =>  200,
+            'data'   =>  Location::all('location')->toArray()
+        ), 200);
     }
 }

@@ -1,6 +1,7 @@
 <?php namespace Cb\Linez\Controllers;
 
 use BackendMenu;
+use Response;
 use Backend\Classes\Controller;
 use Cb\Linez\Models\HairColor;
 
@@ -26,6 +27,10 @@ class HairColors extends Controller
 
     public function getHairColors()
     {
-        return HairColor::all('color')->toJson();
+        return Response::json(array(
+            'status'    => 'Success',
+            'code'      =>  200,
+            'data'   =>  HairColor::all('color')->toArray()
+        ), 200);
     }
 }

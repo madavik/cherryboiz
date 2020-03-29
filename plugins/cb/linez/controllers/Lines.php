@@ -2,8 +2,12 @@
 
 use BackendMenu;
 use Input;
+use Response;
 use Backend\Classes\Controller;
 use Cb\Linez\Models\Line;
+use Cb\Linez\Models\HairColor;
+use Cb\Linez\Models\Location;
+use Cb\Linez\Models\Vibe;
 
 /**
  * Lines Back-end Controller
@@ -27,10 +31,31 @@ class Lines extends Controller
 
     public function getLine()
     {
-        $vibe = Input::get('vibe');
-        $location = Input::get('location');
-        $hairColor = Input::get('haircolor');
-        dd($vibe, $location, $hairColor);
-        return Line::all('line')->toJson();
+        $v = Input::get('vibe');
+        $l = Input::get('location');
+        $h = Input::get('haircolor');
+        $vibe = Vibe::where('vibe', $v)->first();
+        $location = Location::where('location', $l)->first();
+        $hair = HairColor::where('color', $h)->first();
+        if($vibe && $location && $hair){
+            $lines = Line::whereHas('vibes', function($q) use($vibe){
+                $q->where('vibe', $vibe->vibe);
+            })->whereHas('locations', function($q) use($location){
+                $q->where('location', $location->location);
+            })->whereHas('haircolors', function($q) use($hair){
+                $q->where('color', $hair->color);
+            })->get()->toArray();
+            $line = $lines[array_rand($lines)];
+            return Response::json(array(
+                'status'    => 'Success',
+                'code'      =>  200,
+                'data'   =>  $line['line']
+            ), 200);
+        }
+        return Response::json(array(
+            'status'    => 'Error',
+            'code'      =>  400,
+            'message'   =>  'Bad Request'
+        ), 401);
     }
 }

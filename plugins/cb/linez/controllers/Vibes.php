@@ -1,6 +1,7 @@
 <?php namespace Cb\Linez\Controllers;
 
 use BackendMenu;
+use Response;
 use Backend\Classes\Controller;
 use Cb\Linez\Models\Vibe;
 
@@ -26,6 +27,10 @@ class Vibes extends Controller
 
     public function getVibes()
     {
-        return Vibe::all('vibe')->toJson();
+        return Response::json(array(
+            'status'    => 'Success',
+            'code'      =>  200,
+            'data'   =>  Vibe::all('vibe')->toArray()
+        ), 200);
     }
 }
